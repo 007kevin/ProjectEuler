@@ -1,2 +1,2 @@
 # ProjectEuler
-Solutions for Project Euler (self study)
+This repo contains personal approaches to solving problems on Project Euler to keep track of my progress
