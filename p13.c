@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #define MAXDIGITS 1000
+#define BYTES 51
 
 typedef struct {
     int ndigits;
@@ -22,8 +23,8 @@ int main(int argc, char *argv[]){
         exit(1);
     }
 
-    size_t bytes = 51;
-    char *numbuffer = (char *) malloc(bytes); //Allocate memory for character buffer for storing line
+    size_t bytes = BYTES;
+    char *numbuffer = (char *) malloc(BYTES * sizeof(size_t)); //Allocate memory for character buffer for storing line
     getline(&numbuffer, &bytes, fp); //first parameter must be char** (i.e pointer to a pointer to a char)
                                      //so the getline function is able to update value of the char that it points to
     num *val = init_num(bytes, numbuffer);
@@ -40,7 +41,9 @@ num *init_num(size_t n, char *p){
     num *q = (num *) malloc(sizeof(num)); //allocate memory for num structure
     q->ndigits = n; //Set number of digits in the big number
     char *r = q->d;
-    while ((*r++ = *p++) != '\n')
-        ;
+    while (*p != '\n')
+        *r++ = *p++;
+        ; 
+    *r = '\0';//remove newline
     return q;
 }
