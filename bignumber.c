@@ -6,10 +6,15 @@
 //num *add(num *, num*);
 int main(){
     num *x, *y, *z;
-    x = init_num("123456", 6);
-    y = init_num("354", 3);
+    x = init_num("99999999999999999999", 20);
+    y = init_num("99999999999999999999", 20);
     z = add(x, y);
-    printf("%s\n", z->val);
+    int i;
+    for (i = z->d - 1; i >= 0 ; i--) /*interesting find: output will be the same whether "i = z->d" or "i = z->d - 1
+                                       since the former will print the null character, thus not visible in stdout*/
+        putchar(z->val[i]);
+    putchar('\n');
+    printf("%s %d\n", z->val, z->d);
     return 0;
 }
 
@@ -45,20 +50,23 @@ num *add(num *num1, num *num2){
     if (temp == NULL)
         fprintf(stderr, "error: could not initialize temp in add function\n");
     int i = 0, carryflag = 0;
-    char *val1 = num1->val, *val2 = num2->val;
-    while (m--){//check --m if fail
-        temp[i] = (((val1[i] - '0') + (val2[i] - '0') + carryflag) % 10) + '0';
-        if ((val1[i] - '0') + (val2[i] - '0') > 9)
+    int value1, value2;
+    while (--n){//check --m if fail
+        value1 = i < num1->d ? (num1->val)[i] - '0': 0 ;
+        value2 = i < num2->d ?(num2->val)[i] - '0': 0;
+        temp[i] = ((value1 + value2 + carryflag) % 10) + '0';
+        if (value1 + value2 + carryflag > 9)
             carryflag = 1;
         else
             carryflag = 0;
         i++;
     }
+    
     if (carryflag){
         temp[i++] = '1';
     }
     temp[i] = '\0';
     np->val = temp;
-    np->d = i - 1;
+    np->d = i;
     return np;
 }

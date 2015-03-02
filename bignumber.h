@@ -7,7 +7,10 @@ typedef struct{
 } num;
 
 /* init_num: @param buffer conting string representation of a number and number of digits
- *           @return num type */
+ *           @return num type
+ *           note: do not have to input char number buffer in reversed order. 
+ *                 function will reverse automatically */
+    
 num *init_num(char *, int);
 
 /* add: return sum */
