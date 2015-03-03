@@ -1,5 +1,9 @@
+/* @author k.k
+ *
+ * bignumber header
+ *
+ */
 typedef struct{
-
     int d; /* value indicates the number of digits*/
     char *val; /* array to represent number (will be reversed to make operation 
                 implementations easier)
