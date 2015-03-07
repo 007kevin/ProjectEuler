@@ -66,3 +66,7 @@ num *add(num *num1, num *num2){
     np->d = i;
     return np;
 }
+
+num *multiply(num *, num *){
+    
+}

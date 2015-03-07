@@ -14,9 +14,9 @@ typedef struct{
  *           @return num type
  *           note: do not have to input char number buffer in reversed order. 
  *                 function will reverse automatically */
-    
 num *init_num(char *, int);
 
 /* add: return sum */
 num *add(num *, num *);
 
+num *multiply(num *, num *);
