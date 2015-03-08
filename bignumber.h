@@ -9,22 +9,25 @@ typedef struct{
                 implementations easier)
               */
 } num;
+/* nfree: will free the memory of the string representation of the value as well as the num struct */
+void nfree(num *);
 
 /* init_num: @param buffer conting string representation of a number and number of digits
  *           @return num type
  *           note: do not have to input char number buffer in reversed order. 
  *                 function will reverse automatically */
-num *init_num(char *, int);
+    
+num *init_num(char *);
 
 /* add: return sum */
 num *add(num *, num *);
 
-<<<<<<< HEAD
 /* multiply: return product of two numbers */
 num *multiply(num * ,num *);
 
 /* numcmp: compares two nums. returns either -1, 0, 1 */
 int numcmp(num *, num*);
-=======
-num *multiply(num *, num *);
->>>>>>> 4cce84b548066c06fd40327a483b6aeb1b7d94da
+
+/* print: will print the number value as intended to be displayed
+ * (i.e unreversed) */
+void printnum(num *);
