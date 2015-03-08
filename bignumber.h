@@ -20,3 +20,8 @@ num *init_num(char *, int);
 /* add: return sum */
 num *add(num *, num *);
 
+/* multiply: return product of two numbers */
+num *multiply(num * ,num *);
+
+/* numcmp: compares two nums. returns either -1, 0, 1 */
+int numcmp(num *, num*);

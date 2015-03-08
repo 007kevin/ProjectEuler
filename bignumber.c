@@ -66,3 +66,63 @@ num *add(num *num1, num *num2){
     np->d = i;
     return np;
 }
+
+num *multiply(num *, num *){
+    
+}
+
+int numcmp(num *num1, num *num2){
+    /*if num1 has less digits than num2, then num1 < num2 */
+    if (num1->d < num2->d)
+        return -1;
+    
+    /*if num1 has greater digits than num2, then num1 > num2 */
+    else if (num1->d > num->d)
+        return 1;
+
+    /*if string representation of digits are equal, the values are equal */
+    else if (strcmp(num1->val, num2->val) == 0)
+        return 0
+
+    /*num1 and num2 have the same number of digits, but are not equal */
+    else{
+        int i;
+        /* invariant: i is the i'th digit to compared, indexed [0 num1->d) */
+        for (i = num1->d - 1; i >= 0; i--)
+            if ((num1->val)[i] > ((num2->va)[i]))
+                return 1;
+            if ((num1->val)[i] < ((num2->val)[i]))
+                return -1;
+        }
+        /* found to be equal */
+        return 0
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
