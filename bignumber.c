@@ -70,6 +70,7 @@ num *add(num *num1, num *num2){
 num *multiply(num *, num *){
     
 }
+<<<<<<< HEAD
 
 int numcmp(num *num1, num *num2){
     /*if num1 has less digits than num2, then num1 < num2 */
@@ -126,3 +127,5 @@ int numcmp(num *num1, num *num2){
 
 
 
+=======
+>>>>>>> 4cce84b548066c06fd40327a483b6aeb1b7d94da
